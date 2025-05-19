@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import prisma from "@/lib/db.config";
 import { AuthOptions, ISODateString, User } from "next-auth";
@@ -36,8 +37,8 @@ export const authOptions: AuthOptions = {
           data: {
             email: user.email!,
             name: user.name!,
-            oauth_id: account?.providerAccountId,
-            provider: account?.provider,
+            oauth_id: account?.providerAccountId!,
+            provider: account?.provider!,
             image: user?.image,
           },
         });
