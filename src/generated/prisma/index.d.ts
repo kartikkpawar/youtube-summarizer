@@ -899,6 +899,7 @@ export namespace Prisma {
     oauth_id: string | null
     coins: number | null
     created_at: Date | null
+    provider: string | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -909,6 +910,7 @@ export namespace Prisma {
     oauth_id: string | null
     coins: number | null
     created_at: Date | null
+    provider: string | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -919,6 +921,7 @@ export namespace Prisma {
     oauth_id: number
     coins: number
     created_at: number
+    provider: number
     _all: number
   }
 
@@ -941,6 +944,7 @@ export namespace Prisma {
     oauth_id?: true
     coins?: true
     created_at?: true
+    provider?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -951,6 +955,7 @@ export namespace Prisma {
     oauth_id?: true
     coins?: true
     created_at?: true
+    provider?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -961,6 +966,7 @@ export namespace Prisma {
     oauth_id?: true
     coins?: true
     created_at?: true
+    provider?: true
     _all?: true
   }
 
@@ -1058,6 +1064,7 @@ export namespace Prisma {
     oauth_id: string
     coins: number
     created_at: Date
+    provider: string
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1087,6 +1094,7 @@ export namespace Prisma {
     oauth_id?: boolean
     coins?: boolean
     created_at?: boolean
+    provider?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1097,6 +1105,7 @@ export namespace Prisma {
     oauth_id?: boolean
     coins?: boolean
     created_at?: boolean
+    provider?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1107,6 +1116,7 @@ export namespace Prisma {
     oauth_id?: boolean
     coins?: boolean
     created_at?: boolean
+    provider?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1117,9 +1127,10 @@ export namespace Prisma {
     oauth_id?: boolean
     coins?: boolean
     created_at?: boolean
+    provider?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "image" | "oauth_id" | "coins" | "created_at", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "image" | "oauth_id" | "coins" | "created_at" | "provider", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -1132,6 +1143,7 @@ export namespace Prisma {
       oauth_id: string
       coins: number
       created_at: Date
+      provider: string
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1562,6 +1574,7 @@ export namespace Prisma {
     readonly oauth_id: FieldRef<"User", 'String'>
     readonly coins: FieldRef<"User", 'Int'>
     readonly created_at: FieldRef<"User", 'DateTime'>
+    readonly provider: FieldRef<"User", 'String'>
   }
     
 
@@ -1949,7 +1962,8 @@ export namespace Prisma {
     image: 'image',
     oauth_id: 'oauth_id',
     coins: 'coins',
-    created_at: 'created_at'
+    created_at: 'created_at',
+    provider: 'provider'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -2054,6 +2068,7 @@ export namespace Prisma {
     oauth_id?: StringFilter<"User"> | string
     coins?: IntFilter<"User"> | number
     created_at?: DateTimeFilter<"User"> | Date | string
+    provider?: StringFilter<"User"> | string
   }
 
   export type UserOrderByWithRelationInput = {
@@ -2064,6 +2079,7 @@ export namespace Prisma {
     oauth_id?: SortOrder
     coins?: SortOrder
     created_at?: SortOrder
+    provider?: SortOrder
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -2077,6 +2093,7 @@ export namespace Prisma {
     oauth_id?: StringFilter<"User"> | string
     coins?: IntFilter<"User"> | number
     created_at?: DateTimeFilter<"User"> | Date | string
+    provider?: StringFilter<"User"> | string
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -2087,6 +2104,7 @@ export namespace Prisma {
     oauth_id?: SortOrder
     coins?: SortOrder
     created_at?: SortOrder
+    provider?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -2105,6 +2123,7 @@ export namespace Prisma {
     oauth_id?: StringWithAggregatesFilter<"User"> | string
     coins?: IntWithAggregatesFilter<"User"> | number
     created_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    provider?: StringWithAggregatesFilter<"User"> | string
   }
 
   export type UserCreateInput = {
@@ -2114,6 +2133,7 @@ export namespace Prisma {
     oauth_id: string
     coins?: number
     created_at?: Date | string
+    provider: string
   }
 
   export type UserUncheckedCreateInput = {
@@ -2124,6 +2144,7 @@ export namespace Prisma {
     oauth_id: string
     coins?: number
     created_at?: Date | string
+    provider: string
   }
 
   export type UserUpdateInput = {
@@ -2133,6 +2154,7 @@ export namespace Prisma {
     oauth_id?: StringFieldUpdateOperationsInput | string
     coins?: IntFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateInput = {
@@ -2143,6 +2165,7 @@ export namespace Prisma {
     oauth_id?: StringFieldUpdateOperationsInput | string
     coins?: IntFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserCreateManyInput = {
@@ -2153,6 +2176,7 @@ export namespace Prisma {
     oauth_id: string
     coins?: number
     created_at?: Date | string
+    provider: string
   }
 
   export type UserUpdateManyMutationInput = {
@@ -2162,6 +2186,7 @@ export namespace Prisma {
     oauth_id?: StringFieldUpdateOperationsInput | string
     coins?: IntFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -2172,6 +2197,7 @@ export namespace Prisma {
     oauth_id?: StringFieldUpdateOperationsInput | string
     coins?: IntFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    provider?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2239,6 +2265,7 @@ export namespace Prisma {
     oauth_id?: SortOrder
     coins?: SortOrder
     created_at?: SortOrder
+    provider?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -2254,6 +2281,7 @@ export namespace Prisma {
     oauth_id?: SortOrder
     coins?: SortOrder
     created_at?: SortOrder
+    provider?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -2264,6 +2292,7 @@ export namespace Prisma {
     oauth_id?: SortOrder
     coins?: SortOrder
     created_at?: SortOrder
+    provider?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {

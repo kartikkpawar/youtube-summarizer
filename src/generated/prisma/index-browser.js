@@ -127,7 +127,8 @@ exports.Prisma.UserScalarFieldEnum = {
   image: 'image',
   oauth_id: 'oauth_id',
   coins: 'coins',
-  created_at: 'created_at'
+  created_at: 'created_at',
+  provider: 'provider'
 };
 
 exports.Prisma.SortOrder = {

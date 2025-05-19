@@ -22,6 +22,7 @@ model User {
   oauth_id   String
   coins      Int      @default(50)
   created_at DateTime @default(now())
+  provider   String   @db.VarChar(191)
 
   @@map("users")
 }
