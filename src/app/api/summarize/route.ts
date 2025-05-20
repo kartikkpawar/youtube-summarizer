@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
 
     await minusCoins(session?.user?.id);
     await coinsSpent(session?.user?.id, body.id);
-    await updateSummary(res?.text, body.id);
+    await updateSummary(body.id, res?.text);
 
     return NextResponse.json({
       message: "Podcast video Summary",

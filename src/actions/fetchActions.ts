@@ -26,3 +26,24 @@ export const getSummary = async (id: string) => {
   });
   return summary;
 };
+
+export const getUserOldSummaries = unstable_cache(
+  async (id: number) => {
+    return await prisma.summary.findMany({
+      where: {
+        userId: id,
+      },
+      select: {
+        id: true,
+        url: true,
+        created_at: true,
+        title: true,
+      },
+      orderBy: {
+        created_at: "desc",
+      },
+    });
+  },
+  ["oldSummaries"],
+  { revalidate: 60 * 60, tags: ["oldSummaries"] }
+);
