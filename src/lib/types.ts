@@ -14,12 +14,12 @@ export type ChatType = {
   id: string;
   url: string;
   response?: string | null;
-  user_id: number;
+  userId: number;
   created_at: Date;
   title: string;
 };
 
 export type AddUrlErrorType = {
   url?: string;
-  user_id?: string;
+  userId?: string;
 };

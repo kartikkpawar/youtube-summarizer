@@ -36,7 +36,7 @@ model Summary {
   user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   title      String
   url        String
-  response   String
+  response   String?     @db.Text
   created_at DateTime    @default(now())
   CoinSpend  CoinSpend[]
 

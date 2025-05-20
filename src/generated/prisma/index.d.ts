@@ -2691,7 +2691,7 @@ export namespace Prisma {
     userId: number
     title: string
     url: string
-    response: string
+    response: string | null
     created_at: Date
     _count: SummaryCountAggregateOutputType | null
     _avg: SummaryAvgAggregateOutputType | null
@@ -2779,7 +2779,7 @@ export namespace Prisma {
       userId: number
       title: string
       url: string
-      response: string
+      response: string | null
       created_at: Date
     }, ExtArgs["result"]["summary"]>
     composites: {}
@@ -7148,7 +7148,7 @@ export namespace Prisma {
     userId?: IntFilter<"Summary"> | number
     title?: StringFilter<"Summary"> | string
     url?: StringFilter<"Summary"> | string
-    response?: StringFilter<"Summary"> | string
+    response?: StringNullableFilter<"Summary"> | string | null
     created_at?: DateTimeFilter<"Summary"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     CoinSpend?: CoinSpendListRelationFilter
@@ -7159,7 +7159,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     url?: SortOrder
-    response?: SortOrder
+    response?: SortOrderInput | SortOrder
     created_at?: SortOrder
     user?: UserOrderByWithRelationInput
     CoinSpend?: CoinSpendOrderByRelationAggregateInput
@@ -7173,7 +7173,7 @@ export namespace Prisma {
     userId?: IntFilter<"Summary"> | number
     title?: StringFilter<"Summary"> | string
     url?: StringFilter<"Summary"> | string
-    response?: StringFilter<"Summary"> | string
+    response?: StringNullableFilter<"Summary"> | string | null
     created_at?: DateTimeFilter<"Summary"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     CoinSpend?: CoinSpendListRelationFilter
@@ -7184,7 +7184,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     url?: SortOrder
-    response?: SortOrder
+    response?: SortOrderInput | SortOrder
     created_at?: SortOrder
     _count?: SummaryCountOrderByAggregateInput
     _avg?: SummaryAvgOrderByAggregateInput
@@ -7201,7 +7201,7 @@ export namespace Prisma {
     userId?: IntWithAggregatesFilter<"Summary"> | number
     title?: StringWithAggregatesFilter<"Summary"> | string
     url?: StringWithAggregatesFilter<"Summary"> | string
-    response?: StringWithAggregatesFilter<"Summary"> | string
+    response?: StringNullableWithAggregatesFilter<"Summary"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Summary"> | Date | string
   }
 
@@ -7471,7 +7471,7 @@ export namespace Prisma {
     id?: string
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
     user: UserCreateNestedOneWithoutSummaryInput
     CoinSpend?: CoinSpendCreateNestedManyWithoutSummaryInput
@@ -7482,7 +7482,7 @@ export namespace Prisma {
     userId: number
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
     CoinSpend?: CoinSpendUncheckedCreateNestedManyWithoutSummaryInput
   }
@@ -7491,7 +7491,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutSummaryNestedInput
     CoinSpend?: CoinSpendUpdateManyWithoutSummaryNestedInput
@@ -7502,7 +7502,7 @@ export namespace Prisma {
     userId?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     CoinSpend?: CoinSpendUncheckedUpdateManyWithoutSummaryNestedInput
   }
@@ -7512,7 +7512,7 @@ export namespace Prisma {
     userId: number
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
   }
 
@@ -7520,7 +7520,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -7529,7 +7529,7 @@ export namespace Prisma {
     userId?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -8483,7 +8483,7 @@ export namespace Prisma {
     id?: string
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
     CoinSpend?: CoinSpendCreateNestedManyWithoutSummaryInput
   }
@@ -8492,7 +8492,7 @@ export namespace Prisma {
     id?: string
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
     CoinSpend?: CoinSpendUncheckedCreateNestedManyWithoutSummaryInput
   }
@@ -8576,7 +8576,7 @@ export namespace Prisma {
     userId?: IntFilter<"Summary"> | number
     title?: StringFilter<"Summary"> | string
     url?: StringFilter<"Summary"> | string
-    response?: StringFilter<"Summary"> | string
+    response?: StringNullableFilter<"Summary"> | string | null
     created_at?: DateTimeFilter<"Summary"> | Date | string
   }
 
@@ -8770,7 +8770,7 @@ export namespace Prisma {
     id?: string
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
     user: UserCreateNestedOneWithoutSummaryInput
   }
@@ -8780,7 +8780,7 @@ export namespace Prisma {
     userId: number
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
   }
 
@@ -8840,7 +8840,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutSummaryNestedInput
   }
@@ -8850,7 +8850,7 @@ export namespace Prisma {
     userId?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -8924,7 +8924,7 @@ export namespace Prisma {
     id?: string
     title: string
     url: string
-    response: string
+    response?: string | null
     created_at?: Date | string
   }
 
@@ -8945,7 +8945,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     CoinSpend?: CoinSpendUpdateManyWithoutSummaryNestedInput
   }
@@ -8954,7 +8954,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     CoinSpend?: CoinSpendUncheckedUpdateManyWithoutSummaryNestedInput
   }
@@ -8963,7 +8963,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    response?: StringFieldUpdateOperationsInput | string
+    response?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
