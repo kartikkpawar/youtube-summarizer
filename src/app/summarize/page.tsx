@@ -26,8 +26,6 @@ export default async function SummarizePage({
   const session: CustomSession | null = await getServerSession(authOptions);
   const userCoins = await getUserCoins(session?.user?.id!);
 
-  console.log(summary);
-
   return (
     <div className="container">
       <DashNav user={session?.user!} userCoins={userCoins} />

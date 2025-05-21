@@ -28,10 +28,10 @@ export const getSummary = async (id: string) => {
 };
 
 export const getUserOldSummaries = unstable_cache(
-  async (id: number) => {
+  async (id: string) => {
     return await prisma.summary.findMany({
       where: {
-        userId: id,
+        userId: Number(id),
       },
       select: {
         id: true,
