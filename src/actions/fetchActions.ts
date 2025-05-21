@@ -47,3 +47,42 @@ export const getUserOldSummaries = unstable_cache(
   ["oldSummaries"],
   { revalidate: 60 * 60, tags: ["oldSummaries"] }
 );
+
+export const getCoinsSpend = unstable_cache(
+  async (userId: number | string) => {
+    return await prisma.coinSpend.findMany({
+      where: {
+        userId: Number(userId),
+      },
+      include: {
+        summary: {
+          select: {
+            id: true,
+            url: true,
+            title: true,
+          },
+        },
+      },
+      orderBy: {
+        id: "desc",
+      },
+    });
+  },
+  ["coinsSpend"],
+  { revalidate: 60 * 60, tags: ["coinsSpend"] }
+);
+
+export const getTransactions = unstable_cache(
+  async (user_id: number | string) => {
+    return await prisma.transactions.findMany({
+      where: {
+        userId: Number(user_id),
+      },
+      orderBy: {
+        created_at: "desc",
+      },
+    });
+  },
+  ["transactions"],
+  { revalidate: 60 * 60, tags: ["transactions"] }
+);
